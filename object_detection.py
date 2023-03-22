@@ -10,10 +10,10 @@ class ObjectDetection:
         self.confThreshold = 0.5
         self.image_size = 608
 
-        # Load Network
+        # Загружаем сеть
         net = cv2.dnn.readNet(weights_path, cfg_path)
 
-        # Enable GPU CUDA
+        # GPU CUDA
         net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
         net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
         self.model = cv2.dnn_DetectionModel(net)
